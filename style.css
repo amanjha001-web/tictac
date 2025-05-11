@@ -1,0 +1,260 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* overflow hidden  */
+body{
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+/* container making flex and item center */
+.container{ 
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* main heading styling  */
+h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: rgb(42, 44, 59);
+    padding-top: 10px;
+}
+/* winner message styling */
+.winMsg {
+    position: absolute;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #252424;
+    color: rgb(238, 148, 52);
+    overflow: hidden;
+    z-index: 2;
+    visibility: hidden;
+}
+
+/* winner message gradient border styling */
+.winMsg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px; 
+    background: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red);
+    border-radius: inherit;
+    z-index: -1;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    box-sizing: border-box;
+}
+
+/* winner msg of paragraph margin */
+.winMsg p{
+    margin: 20px 0;
+}
+/* new game button  */
+#newBt{
+    border: none;
+    border-radius: 10px;
+    width: 40%;
+    padding: 2% 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: green;
+    color: greenyellow;
+    cursor: pointer;
+}
+/* container of game playing button */
+.btnContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    min-width: 60vw;
+    gap: 2px;
+    aspect-ratio: 3/2;
+    position: relative;
+    z-index: 1;
+}
+/* game button */
+.btn{
+    background-color: rgb(42, 42, 41);
+    border-radius: 10%;
+    align-content: center;
+    text-align: center;
+    font-size: 50px;
+    cursor: pointer;
+    line-height: 1px;
+    border: none;
+} 
+/* reset game button */
+.resetBtn button{
+    margin: 30px 0;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    aspect-ratio: 3/1;
+    cursor: pointer;
+    background-color: rgb(69, 35, 35);
+    color: rgb(246, 8, 48);
+} 
+  /*making responsive  for small phone  */
+@media screen and (min-width:150px) and (max-width:350px) {
+    h1{
+        font-size: 15px;
+    }
+    .resetBtn button{
+        font-size: 10px;
+        padding: 1px 8px;
+    }
+    .winMsg{
+        font-size: 10px;
+        padding: 8px;
+    }
+    .winMsg p{
+       margin: 0 0;
+    }
+    #newBt{
+        font-size: 6px;
+    }
+    .btnContainer{
+        min-width: 100vw;
+    }
+}
+/* responsive for phone  */
+@media screen and (min-width:351px) and (max-width:550px) {
+    h1{
+        font-size: 20px;
+    }
+    .resetBtn button{
+       font-size: 12px;
+       padding: 2px 11px;
+    }
+    .winMsg{
+        font-size: 14px;
+        padding: 14px;
+    }
+    .winMsg p{
+       margin: 2px 0;
+    }
+    #newBt{
+        font-size: 8px;
+    }
+    .btnContainer{
+        min-width: 90vw;
+    }
+}
+/* responsive for normal tab */
+@media screen and (min-width:550px) and (max-width:750px) {
+    h1{
+        font-size: 25px;
+    }
+    .resetBtn button{
+       font-size: 16px;
+       padding: 3px 15px;
+    }
+    .winMsg{
+        font-size: 18px;
+        padding: 18px;
+    }
+    .winMsg p{
+       margin: 10px 0;
+    }
+    #newBt{
+        font-size: 10px;
+    }
+    .btnContainer{
+        min-width: 80vw;
+    }
+}
+/* responsive for tab or mini laptop */
+@media screen and (min-width:750px) and (max-width:900px) {
+    h1{
+        font-size: 30px;
+    }
+    .resetBtn button{
+        font-size: 18px;
+        padding: 4px 18px;
+    }
+    .winMsg{
+        font-size: 22px;
+        padding: 22px;
+    }
+    .winMsg p{
+       margin: 14px 0;
+    }
+    #newBt{
+        font-size: 12px;
+    }
+}
+/* responsive for laptop */
+@media screen and (min-width:901px) and (max-width:1099px) {
+    h1{
+        font-size: 35px;
+    }
+    .resetBtn button{
+       font-size: 20px;
+       padding: 5px 21px;
+    }
+    .winMsg{
+        font-size: 26px;
+        padding: 26px;
+    }
+    .winMsg p{
+       margin: 18px 0;
+    }
+    #newBt{
+        font-size: 14px;
+    }
+    .btnContainer{
+        min-width: 70vw;
+    }
+}
+/* responsive for big screen  */
+@media screen and (min-width:1100px) {
+    h1{
+        font-size: 40px;
+    }
+    .resetBtn button{
+       font-size: 22px;
+       padding: 6px 23px;
+    }
+    .winMsg{
+        font-size: 30px;
+        padding: 30px;
+    }
+    .winMsg p{
+       margin: 20px 0;
+    }
+    #newBt{
+        font-size: 16px;
+    }
+    .btnContainer{
+        min-width: 60vw;
+        
+    }
+}
+
+.star {
+    position: absolute;
+    color: white;
+    font-size: 10px;
+    animation: twinkle 2s infinite ease-in-out;
+    opacity: 0.8;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+  }
